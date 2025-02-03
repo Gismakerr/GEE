@@ -1,3 +1,11 @@
+import ee
+import os
+import geemap
+geemap.set_proxy(port="33210")
+ee.Authenticate()
+ee.Initialize(project="ee-gismaker6")
+Map = geemap.Map()
+
 def get_feature_bounding_boxes(shapefile_path):
     """
     从本地 Shapefile 获取每个要素的范围 (bounds)。
