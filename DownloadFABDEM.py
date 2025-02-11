@@ -1,11 +1,12 @@
+
+import geopandas as gpd
 import ee
 import os
 import geemap
-geemap.set_proxy(port="33210")
+#geemap.set_proxy(port="33210")
 ee.Authenticate()
 ee.Initialize(project="ee-gismaker6")
 Map = geemap.Map()
-
 def get_feature_bounding_boxes(shapefile_path):
     """
     从本地 Shapefile 获取每个要素的范围 (bounds)。
@@ -65,6 +66,6 @@ def download_fabdem(shapefile_path, output_folder, scale=30):
         except Exception as e:
             print(f"下载 FABDEM 数据 {i} 时出错: {e}")
             
-shp_path = r"D:\元迁移学习\实验\Data\矢量范围\喀斯特.shp"  # 替换为你的 Shapefile 文件路径
-output_folder = r"D:\元迁移学习\实验\Data\附加DEM\喀斯特"       
+shp_path = r"E:\毕业论文\研究生毕业论文\基本数据\结果区域\高山区\高山区.shp"  # 替换为你的 Shapefile 文件路径
+output_folder = r"F:\未裁剪\DEM"       
 download_fabdem(shp_path, output_folder)
